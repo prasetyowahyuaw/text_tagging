@@ -9,8 +9,19 @@ class Home extends CI_Controller
         // system templating view lke blade laravel
         $this->load->library('slice');
     }
+    
     public function index()
     {
         $this->slice->view('home');
     }
+
+    public function logout()
+    {
+        $this->session->set_userdata(array(
+            'id_user' => "",
+            'email' => ""));
+        redirect('login');
+    }
+
+
 }

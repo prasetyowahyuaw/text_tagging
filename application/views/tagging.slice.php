@@ -31,6 +31,8 @@
                     <li class="dropdown">
                         <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" src="{{url('assets/img/avatar/1.jpg')}}" alt="..."></span>
                         <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="#"><i class="ti-power-off"></i> Logout</a>
                         </div>
@@ -49,7 +51,7 @@
                 <div class="header-info">
                     <div class="left">
                         <br>
-                        <h2 class="header-title"><strong>Text Tagging</strong> <small class="subtitle">Pada halaman ini anda akan melakukan tagging terhadap setiap tweet yang ada. Anda akan melakukan 2 tipe tagging yaitu sentimen terhadap tweet dan sentimen terhadap topik. Selain itu anda akan menandai tweet yang termasuk tipe sarkastik</small></h2>
+                        <h2 class="header-title"><strong>Text Tagging</strong> <small class="subtitle">Pada halaman ini anda akan melakukan tagging terhadap setiap tweet yang ada. Anda akan melakukan 2 tipe tagging yaitu sentimen terhadap tweet dan sentimen terhadap topik. Selain itu anda dapat menandai tweet yang termasuk tipe sarkastik jika menurut anda tweet tersebut termasuk sarkastik</small></h2>
                     </div>
                 </div>
             </div>
@@ -62,46 +64,50 @@
             <div class="col-md-4 col-lg-3">
               <h4><strong>Panduan</strong></h4>
               <hr>
-              <p>Dengan <strong>twit</strong> dan <strong>topik</strong> yang ada. identifikasi apakah twit tersebut adalah sangat positif, positif, netral, negatif, atau sangat negatif pada umumnya.</p>
+              <p>Dengan <strong>tweet</strong> dan <strong>topik</strong> yang ada. identifikasi apakah tweet tersebut adalah sangat positif, positif, netral, negatif, atau sangat negatif pada umumnya.</p>
               <p>Lakukan juga identifikasi sentimen terhadap topik tersebut apakah sangat positif, positif, netral, negatif, atau sangat negatif juga. </p>
-              <p>Jika twit sarkastik, centang "sarkastik".</p>
+              <p>Jika tweet sarkastik, centang "sarkastik".</p>
             </div>
 
 
             <div class="col-md-8 col-lg-9">
 
-                <!-- Card Untuk Twit -->
+                <!-- Card Untuk tweet -->
+                @foreach ($tweet as $tweet)
+
+                <input type="text" name="id_tweet" value="{{ $tweet->id_tweet }}" disabled>
+
                 <div class="card b-1 hover-shadow-2 mb-20">
                     <div class="media card-body">
                         <div class="media-body">
                             <div class="mb-2">
-                                <strong>"Malam min, mohon info untuk daerah Baratajaya, Surabaya mati lampu sejak pukul 18.20, kira-kira ada masalah apa dan nyala lagi jam berapa ya? Terima kasih @pln_123"</strong>
+                                <strong>"{{ $tweet->text }}"</strong>
                             </div>
                             <br>
-                            Secara keseluruhan twit adalah : 
+                            Secara keseluruhan tweet adalah : 
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="-2"> Sangat Negatif
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="-2"> Sangat Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="-1"> Negatif
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="-1"> Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="0"> Netral
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="0"> Netral
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="1"> Positif
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="1"> Positif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="2"> Sangat Positif
+                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="2"> Sangat Positif
                                 </label>
                             </div>
 
@@ -137,97 +143,20 @@
 
                     <footer class="card-footer flexbox align-items-center">
                         <div>
-                            <strong>Topik : Politik</strong>
+                            <strong>Topik : {{ $tweet->topic }}</strong>
                         </div>
                         <div>
                             <label class="custom-control custom-control-success custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
+                                <input type="checkbox" class="custom-control-input" name="sarkastik">
                                 <span class="custom-control-indicator"></span>
-                                <span class="custom-control-description">Twit ini Sarkastik</span>
+                                <span class="custom-control-description">tweet ini Sarkastik</span>
                             </label>
                         </div>
                         
                     </footer>
                 </div>
 
-                <div class="card b-1 hover-shadow-2 mb-20">
-                    <div class="media card-body">
-                        <div class="media-body">
-                            <div class="mb-2">
-                                <strong>"Malam min, mohon info untuk daerah Baratajaya, Surabaya mati lampu sejak pukul 18.20, kira-kira ada masalah apa dan nyala lagi jam berapa ya? Terima kasih @pln_123"</strong>
-                            </div>
-                            <br>
-                            Secara keseluruhan twit adalah : 
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="-2"> Sangat Negatif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="-1"> Negatif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="0"> Netral
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="1"> Positif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="" value="2"> Sangat Positif
-                                </label>
-                            </div>
-
-                            <br>
-                            Sentimen terhadap topik :
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="-2"> Sangat Negatif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="-1"> Negatif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="0"> Netral
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="1"> Positif
-                                </label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="2"> Sangat Positif
-                                </label>
-                            </div>  
-                        </div>
-                    </div>
-
-                    <footer class="card-footer flexbox align-items-center">
-                        <div>
-                            <strong>Topik : Politik</strong>
-                        </div>
-                        <div>
-                            <label class="custom-control custom-control-success custom-checkbox">
-                                <input type="checkbox" class="custom-control-input">
-                                <span class="custom-control-indicator"></span>
-                                <span class="custom-control-description">Twit ini Sarkastik</span>
-                            </label>
-                        </div>
-                        
-                    </footer>
-                </div>
+                @endforeach
 
             </div>
 
@@ -245,6 +174,44 @@
             </div>
         </footer>
         <!-- END Footer -->
+        
 
     </main>
+
+
+    
+<script>
+
+    function sendTagging() 
+    {
+        $.ajax({
+            type:"POST",
+            url: '{{url("/")}}/tagging/taggingUpdate',
+            data: {
+                'id_tweet' : id_tweet,
+                'label_tweet' : label_tweet,
+                'label_tweet' : label_topic,
+                'sarkastik' : sarkastik
+
+            },
+            beforeSend : function () 
+            {
+
+            },
+            success : function (data) 
+            {
+
+            },
+            error : function () 
+            {
+                alert('error');
+
+            }
+        });
+    }
+
+</script>
+
+
+
 @endsection

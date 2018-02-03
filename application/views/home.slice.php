@@ -31,8 +31,10 @@
                     <li class="dropdown">
                         <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" src="{{url('assets/img/avatar/1.jpg')}}" alt="..."></span>
                         <div class="dropdown-menu dropdown-menu-right">
+                            <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
+                            <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="ti-power-off"></i> Logout</a>
+                            <a class="dropdown-item" href="<?= base_url(); ?>home/logout"><i class="ti-power-off"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
