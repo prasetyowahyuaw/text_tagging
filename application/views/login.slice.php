@@ -8,7 +8,7 @@
           <h5 class="text-uppercase text-center">Sign in</h5>
           <br>
 
-          <form class="form-type-material">
+          <form class="form-type-material" action="<?= base_url()."login/submitlogin"; ?>" method="POST">
             <div class="form-group">
               <input type="email" class="form-control" id="email" name="email">
               <label for="username">Email</label>
