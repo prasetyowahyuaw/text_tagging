@@ -12,14 +12,15 @@ class Home extends CI_Controller
     
     public function index()
     {
-        $this->slice->view('home2');
+        $this->slice->view('home');
     }
 
-    public function logout()
-    {
-        $this->session->set_userdata(array(
-            'id_user' => "",
-            'email' => ""));
+    public function logout() {
+        
+        $sess_array = array(
+            'email' => ''
+        );
+        $this->session->unset_userdata('logged_in', $sess_array);
         redirect('login');
     }
 
