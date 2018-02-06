@@ -12,7 +12,7 @@ class Home extends CI_Controller
     
     public function index()
     {
-        $this->slice->view('home');
+        $this->slice->view('home2');
     }
 
     public function logout()
