@@ -8,15 +8,17 @@
           <h5 class="text-uppercase text-center">Sign in</h5>
           <br>
 
-          <form class="form-type-material" action="<?= base_url()."login/submitlogin"; ?>" method="POST">
+          <form class="" action="<?= base_url()."login/submitlogin"; ?>" method="POST">
             <div class="form-group">
-              <input type="email" class="form-control" id="email" name="email">
               <label for="username">Email</label>
+              <input type="email" class="form-control" id="email" name="email">
+              
             </div>
 
             <div class="form-group">
-              <input type="password" class="form-control" id="password" name="password">
               <label for="password">Password</label>
+              <input type="password" class="form-control" id="password" name="password">
+              
             </div>
 
             <div class="form-group">
@@ -24,7 +26,7 @@
             </div>
           </form>
         </div>
-        <p class="text-center text-muted fs-13 mt-20">Don't have an account? <a class="text-primary fw-500" href="{{url('signup')}}">Sign up</a></p>        
+        <!-- <p class="text-center text-muted fs-13 mt-20">Don't have an account? <a class="text-primary fw-500" href="{{url('signup')}}">Sign up</a></p>    -->     
       </div>
     </div>
 @endsection

@@ -135,54 +135,8 @@
                     </div>
                     
                 </div>
-
-                <div class="card">
-                    <div class="card-header">
-                        <h5 class="card-title"><strong>Label</strong> Per Topik</h5>
-                        <select class="form-control form-control-sm" data-provide="selectpicker" data-width="140">
-                            <option>Today</option>
-                            <option>Yesterday</option>
-                            <option>Last week</option>
-                            <option>Last month</option>
-                        </select>
-                    </div>
-
-                    <table class="table table-striped table-hover">
-                        <tbody>
-                            <tr>
-                                <td><a class="hover-info" href="#">Topik A</a></td>
-                                <td><strong>50</strong> Twit Tagged by <strong>5</strong> People</td>
-                                <td class="text-danger w-90px">10</td>                          
-                                <td class="text-warning w-90px">10</td>
-                                <td class="text-muted w-90px">10</td>
-                                <td class="text-primary w-90px">10</td>
-                                <td class="text-success w-90px">10</td>
-                            </tr>
-                            <tr>
-                                <td><a class="hover-info" href="#">Topik B</a></td>
-                                <td><strong>50</strong> Twit Tagged by <strong>5</strong> People</td>
-                                <td class="text-danger w-90px">10</td>                          
-                                <td class="text-warning w-90px">10</td>
-                                <td class="text-muted w-90px">10</td>
-                                <td class="text-primary w-90px">10</td>
-                                <td class="text-success w-90px">10</td>
-                            </tr>
-                            <tr>
-                                <td><a class="hover-info" href="#">Topik C</a></td>
-                                <td><strong>50</strong> Twit Tagged by <strong>5</strong> People</td>
-                                <td class="text-danger w-90px">10</td>                          
-                                <td class="text-warning w-90px">10</td>
-                                <td class="text-muted w-90px">10</td>
-                                <td class="text-primary w-90px">10</td>
-                                <td class="text-success w-90px">10</td>
-                            </tr>                                  
-                        </tbody>
-                    </table>
-                </div>
-
             </div>
         </div>
-
 
         <!-- Footer -->
         <footer class="site-footer">
