@@ -6,6 +6,7 @@ class Home extends CI_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->load->model('User','',TRUE);
         // system templating view lke blade laravel
         if ($this->session->has_userdata('username')){
             if($this->session->userdata('id_user')!=1){
@@ -20,17 +21,11 @@ class Home extends CI_Controller
     
     public function index()
     {
-        $this->slice->view('home');
-    }
+        // get data peformance
+        $data['peformance'] = $this->User->getUserPeformance();
+        // var_dump($data['peformance']);die();
 
-    public function logout() {
-        
-        $sess_array = array(
-            'email' => ''
-        );
-        $this->session->unset_userdata('logged_in', $sess_array);
-        redirect('login');
+        $this->slice->view('home',$data);
     }
-
 
 }

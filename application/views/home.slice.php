@@ -214,28 +214,28 @@
 
                     <div class="card-body">
                         <table class="table table-separated">
+                            @foreach ($peformance as $peformance)                            
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>User</th>
                                     <th>Tweet</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                <th scope="row">1</th>
                                 <td>
                                     <div class="media">
                                     <img class="avatar" src="{{url('/assets/img/avatar/1.jpg')}}" alt="...">
                                     <div class="media-body">
-                                        <p>Maryam Amiri</p>
+                                        <p>{{ $peformance->name }}</p>
                                     </div>
                                     </div>
                                 </td>
-                                <td>541</td>
+                                <td>{{ $peformance->row_end-1 }}</td>
                                 </tr>
                                 
                             </tbody>
+                            @endforeach                            
                         </table>
                     </div>
                 </div>

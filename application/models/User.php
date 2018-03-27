@@ -34,4 +34,11 @@ class User Extends CI_model
 		$sql = 'UPDATE `user` SET `row_end`= `row_end`+5 WHERE `id_user`='.$id_user;
 		$query = $this->db->query($sql);
 	}
+
+	public function getUserPeformance(){
+		$sql = 'SELECT `name`,`row_end` FROM `user`';
+		$query = $this->db->query($sql);
+
+		return $query->result();
+	}
 }
