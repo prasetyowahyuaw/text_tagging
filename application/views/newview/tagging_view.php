@@ -177,11 +177,11 @@
                 <input type="hidden" name="user" value="<?php echo $userx?>">
                 <input type="hidden" name="size" value="<?php echo count($tw)?>">
 
-                <div class="row">
-                    <div class="col-lg-12">
-                        <button class="btn btn-lg btn-block btn-primary"> SUBMIT </button>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <button class="btn btn-lg btn-block btn-primary"> SUBMIT </button>
+                        </div>
                     </div>
-                </div>
 
                 <br><br>
                 <?php echo form_close() ?>

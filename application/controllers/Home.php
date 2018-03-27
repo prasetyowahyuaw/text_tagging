@@ -7,7 +7,15 @@ class Home extends CI_Controller
     {
         parent::__construct();
         // system templating view lke blade laravel
-        $this->load->library('slice');
+        if ($this->session->has_userdata('username')){
+            if($this->session->userdata('id_user')!=1){
+                redirect('Tagging');
+            }
+        }
+        else{
+            redirect('Login');
+        }
+        
     }
     
     public function index()

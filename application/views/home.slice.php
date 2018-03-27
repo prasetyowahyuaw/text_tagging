@@ -51,7 +51,7 @@
                 <div class="header-info">
                     <div class="left">
                         <br>
-                        <h2 class="header-title"><strong>Home Dashboard</strong> <small class="subtitle">Ringkasan dari proses tagging yang dilakukan</small></h2>
+                        <h2 class="header-title"><strong>Home Dashboard</strong></h2>
                     </div>
                 </div>
             </div>
@@ -102,24 +102,6 @@
                         <div class="card shadow-1">
                             <div class="card-body">
                                 <div class="flexbox">
-                                    <h5>Topik</h5>
-                                </div>
-                                <div class="text-center my-2">
-                                    <div class="fs-60 fw-400 text-primary">82</div>
-                                    <span class="fw-400 text-muted">Topik</span>
-                                </div>
-                            </div>
-                            <div class="card-body bg-lighter fw-400 py-12">
-                                <span class="text-muted mr-1">target :</span>
-                                <span class="text-dark">50</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-6 col-lg-3">
-                        <div class="card shadow-1">
-                            <div class="card-body">
-                                <div class="flexbox">
                                     <h5>Tweet Sarkastik</h5>
                                 </div>
                                 <div class="text-center my-2">
@@ -133,9 +115,137 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-6 col-lg-3">
+                        <div class="card shadow-1">
+                            <div class="card-body">
+                                <div class="flexbox">
+                                    <h5>Tweet Reported</h5>
+                                </div>
+                                <div class="text-center my-2">
+                                    <div class="fs-60 fw-400 text-primary">82</div>
+                                    <span class="fw-400 text-muted">Tweet</span>
+                                </div>
+                            </div>
+                            <div class="card-body bg-lighter fw-400 py-12">
+                                <span class="text-muted mr-1">target :</span>
+                                <span class="text-dark">50</span>
+                            </div>
+                        </div>
+                    </div>
                     
                 </div>
+                <!--END row -->
+                
+                <div class="row">
+                    <div class="col-lg-6">
+                        <!-- Card  -->
+                        <div class="card shadow-1">
+                            <div class="card-header">
+                                <h5 class="card-title"><strong>Persebaran Sentimen di Topik</strong></h5>
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Topik</th>
+                                        <th>Tagged</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END Card  -->
+                    </div>
+
+                    <div class="col-lg-6">
+                        <!-- Card -->
+                        <div class="card shadow-1">
+                            <div class="card-header">
+                                <h5 class="card-title"><strong>Persebaran Sentimen Terhadap Topik</strong></h5>
+                            </div>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Topik</th>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>Sarkastik</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>A</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>100</td>
+                                        <td>5</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- END Card  -->
+                    </div>
+                    
+                </div>
+                <!-- END row -->
+
+                <div class="card">
+                    <h5 class="card-title"><strong>Peformance Tagger</strong></h5>
+
+                    <div class="card-body">
+                        <table class="table table-separated">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>User</th>
+                                    <th>Tweet</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                <th scope="row">1</th>
+                                <td>
+                                    <div class="media">
+                                    <img class="avatar" src="{{url('/assets/img/avatar/1.jpg')}}" alt="...">
+                                    <div class="media-body">
+                                        <p>Maryam Amiri</p>
+                                    </div>
+                                    </div>
+                                </td>
+                                <td>541</td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
             </div>
+            <!-- END Container -->
+
+            
+
+
         </div>
 
         <!-- Footer -->

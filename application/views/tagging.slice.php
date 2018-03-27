@@ -31,10 +31,9 @@
                     <li class="dropdown">
                         <span class="topbar-btn" data-toggle="dropdown"><img class="avatar" src="{{url('assets/img/avatar/1.jpg')}}" alt="..."></span>
                         <div class="dropdown-menu dropdown-menu-right">
-                            <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
-                            <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
+                            <a class="dropdown-item" href="#"><i class="ti-user"></i> {{$user}}</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#"><i class="ti-power-off"></i> Logout</a>
+                            <a class="dropdown-item" href="{{url('Login/Logout')}}"><i class="ti-power-off"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -52,6 +51,9 @@
                     <div class="left">
                         <br>
                         <h2 class="header-title"><strong>Text Tagging</strong> <small class="subtitle">Pada halaman ini anda akan melakukan tagging terhadap setiap tweet yang ada. Anda akan melakukan 2 tipe tagging yaitu sentimen terhadap tweet dan sentimen terhadap topik. Selain itu anda dapat menandai tweet yang termasuk tipe sarkastik jika menurut anda tweet tersebut termasuk sarkastik</small></h2>
+                    </div>
+                    <div class="right">
+                        <h5><span class="badge badge-xl badge-success">Counter : {{$counter}}</span></h5>
                     </div>
                 </div>
             </div>
@@ -71,71 +73,68 @@
 
 
             <div class="col-md-8 col-lg-9">
-
+                <form class="" action="{{url('Tagging/Submit')}}" method="POST">
                 <!-- Card Untuk tweet -->
                 @foreach ($tweet as $tweet)
-
-                <input type="text" name="id_tweet" value="{{ $tweet->id_tweet }}" disabled>
-
-                <div class="card b-1 hover-shadow-2 mb-20">
+                <div class="card b-1 hover-shadow-5 mb-20">
                     <div class="media card-body">
                         <div class="media-body">
                             <div class="mb-2">
-                                <strong>"{{ $tweet->text }}"</strong>
+                                <h3><strong>"{{ $tweet->text }}"</strong></h3>
                             </div>
                             <br>
-                            Secara keseluruhan tweet adalah : 
+                            Sentimen tweet ini adalah : 
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="-2"> Sangat Negatif
+                                    <input class="form-check-input" type="radio" name="sentimen_tweet_{{$tweet->id_tweet}}" value="-2" required> Sangat Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="-1"> Negatif
+                                    <input class="form-check-input" type="radio" name="sentimen_tweet_{{$tweet->id_tweet}}"  value="-1" required> Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="0"> Netral
+                                    <input class="form-check-input" type="radio" name="sentimen_tweet_{{$tweet->id_tweet}}" value="0" required> Netral
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="1"> Positif
+                                    <input class="form-check-input" type="radio" name="sentimen_tweet_{{$tweet->id_tweet}}" value="1" required> Positif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions" id="sn" value="2"> Sangat Positif
+                                    <input class="form-check-input" type="radio" name="sentimen_tweet_{{$tweet->id_tweet}}" value="2" required> Sangat Positif
                                 </label>
                             </div>
 
                             <br>
-                            Sentimen terhadap topik :
+                            Sentimen terhadap topik &nbsp; :
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="-2"> Sangat Negatif
+                                    <input class="form-check-input" type="radio" name="sentimen_topic_{{$tweet->id_tweet}}" value="-2" required> Sangat Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="-1"> Negatif
+                                    <input class="form-check-input" type="radio" name="sentimen_topic_{{$tweet->id_tweet}}" value="-1" required> Negatif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="0"> Netral
+                                    <input class="form-check-input" type="radio" name="sentimen_topic_{{$tweet->id_tweet}}" value="0" required> Netral
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="1"> Positif
+                                    <input class="form-check-input" type="radio" name="sentimen_topic_{{$tweet->id_tweet}}" value="1" required> Positif
                                 </label>
                             </div>
                             <div class="form-check form-check-inline">
                                 <label class="form-check-label">
-                                    <input class="form-check-input" type="radio" name="inlineRadioOptions2" id="" value="2"> Sangat Positif
+                                    <input class="form-check-input" type="radio" name="sentimen_topic_{{$tweet->id_tweet}}" value="2" required> Sangat Positif
                                 </label>
                             </div>  
                         </div>
@@ -143,11 +142,11 @@
 
                     <footer class="card-footer flexbox align-items-center">
                         <div>
-                            <strong>Topik : {{ $tweet->topic }}</strong>
+                             <span class="badge badge-xl badge-primary">Topik : {{ $tweet->topic }}</span>    
                         </div>
                         <div>
                             <label class="custom-control custom-control-success custom-checkbox">
-                                <input type="checkbox" class="custom-control-input" name="sarkastik">
+                                <input type="checkbox" class="custom-control-input" value="1" name="sarkastik_{{$tweet->id_tweet}}">
                                 <span class="custom-control-indicator"></span>
                                 <span class="custom-control-description">tweet ini Sarkastik</span>
                             </label>
@@ -155,10 +154,19 @@
                         
                     </footer>
                 </div>
-
                 @endforeach
 
+                <div class="row">
+                    <div class="col-lg-12">
+                        <button class="btn btn-lg btn-block btn-dark" type="submit"> Submit </button>
+                    </div>
+                </div>
+                </from>
+                
+                <br><br>
+
             </div>
+            
 
           </div>
         </div>
@@ -177,41 +185,6 @@
         
 
     </main>
-
-
-    
-<script>
-
-    function sendTagging() 
-    {
-        $.ajax({
-            type:"POST",
-            url: '{{url("/")}}/tagging/taggingUpdate',
-            data: {
-                'id_tweet' : id_tweet,
-                'label_tweet' : label_tweet,
-                'label_tweet' : label_topic,
-                'sarkastik' : sarkastik
-
-            },
-            beforeSend : function () 
-            {
-
-            },
-            success : function (data) 
-            {
-
-            },
-            error : function () 
-            {
-                alert('error');
-
-            }
-        });
-    }
-
-</script>
-
 
 
 @endsection

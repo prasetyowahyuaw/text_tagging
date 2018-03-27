@@ -8,10 +8,10 @@
           <h5 class="text-uppercase text-center">Sign in</h5>
           <br>
 
-          <form class="" action="<?= base_url()."login/submitlogin"; ?>" method="POST">
+          <form class="" action="{{url('Login/verifyLogin')}}" method="POST">
             <div class="form-group">
-              <label for="username">Email</label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="username">Username</label>
+              <input type="text" class="form-control" id="username" name="username">
               
             </div>
 
