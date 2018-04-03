@@ -23,4 +23,12 @@ class Tag extends CI_model
             return FALSE;
         }
     }
+
+    public function getTweetTagged()
+    {
+        $sql = "SELECT COUNT(DISTINCT(id_tweet)) FROM `tagging`";
+        $query = $this->db->query($sql);
+
+        return $query->num_rows();
+    }
 }

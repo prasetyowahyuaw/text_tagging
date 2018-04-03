@@ -36,7 +36,7 @@ class User Extends CI_model
 	}
 
 	public function getUserPeformance(){
-		$sql = 'SELECT `name`,`row_end` FROM `user`';
+		$sql = 'SELECT `name`,`row_end`,`row_start` FROM `user`';
 		$query = $this->db->query($sql);
 
 		return $query->result();

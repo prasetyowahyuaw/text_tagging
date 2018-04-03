@@ -55,13 +55,23 @@ class Tagging extends Ci_Controller
                 $sarkastik = 0;        
             }
 
+            // declare checkbox laporan
+            $checkbox_laporan = $this->input->post('laporan_'.$data_tweet[$i]->id_tweet);
+            if($checkbox_laporan == '1'){
+                $laporan = 1;
+            }
+            else{
+                $laporan = 0;
+            }
+
             // declare array
             $data_input = array(
                 'id_user' => $this->session->userdata('id_user'),
                 'id_tweet' => $data_tweet[$i]->id_tweet,
                 'label_tweet' => $this->input->post('sentimen_tweet_'.$data_tweet[$i]->id_tweet),
                 'label_topic' => $this->input->post('sentimen_topic_'.$data_tweet[$i]->id_tweet),
-                'sarkastik' => $sarkastik
+                'sarkastik' => $sarkastik,
+                'laporan' => $laporan
             );
 
             // insert to database
@@ -72,7 +82,7 @@ class Tagging extends Ci_Controller
         // update row end
         $this->User->updateRowEnd($id_user);
 
-        redirect('tagging');
+        redirect('Tagging');
 
     }
     

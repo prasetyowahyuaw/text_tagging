@@ -7,18 +7,18 @@
             <div class="topbar-left">
                 <span class="topbar-btn topbar-menu-toggler"><i>&#9776;</i></span>
                 <div class="topbar-brand">
-                    <a href="{{url('/home')}}"><img src="{{url('assets/img/logo_tagging.png')}}" alt=""></a>
+                    <a href="{{url('/Home')}}"><img src="{{url('assets/img/logo_tagging.png')}}" alt=""></a>
                 </div>
                 <div class="topbar-divider d-none d-md-block"></div>
                 <nav class="topbar-navigation">
                     <ul class="menu">
                         <li class="menu-item active">
-                            <a class="menu-link" href="{{url('/home')}}">
+                            <a class="menu-link" href="{{url('/Home')}}">
                                 <span class="title">Home</span>
                             </a>
                         </li>
                         <li class="menu-item">
-                            <a class="menu-link" href="{{url('/tagging')}}">
+                            <a class="menu-link" href="{{url('/Tagging')}}">
                                 <span class="title">Tagging</span>
                             </a>
                         </li>
@@ -34,7 +34,7 @@
                             <a class="dropdown-item" href="#"><i class="ti-user"></i> Profile</a>
                             <a class="dropdown-item" href="#"><i class="ti-settings"></i> Settings</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="<?= base_url(); ?>home/logout"><i class="ti-power-off"></i> Logout</a>
+                            <a class="dropdown-item" href="{{url('Login/Logout')}}"><i class="ti-power-off"></i> Logout</a>
                         </div>
                     </li>
                 </ul>
@@ -214,13 +214,13 @@
 
                     <div class="card-body">
                         <table class="table table-separated">
-                            @foreach ($peformance as $peformance)                            
                             <thead>
                                 <tr>
                                     <th>User</th>
                                     <th>Tweet</th>
                                 </tr>
                             </thead>
+                            @foreach ($peformance as $peformance)                            
                             <tbody>
                                 <tr>
                                 <td>
@@ -231,7 +231,7 @@
                                     </div>
                                     </div>
                                 </td>
-                                <td>{{ $peformance->row_end-1 }}</td>
+                                <td>{{ ($peformance->row_end)-($peformance->row_start) }}</td>
                                 </tr>
                                 
                             </tbody>

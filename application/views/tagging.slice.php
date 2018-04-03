@@ -145,6 +145,11 @@
                              <span class="badge badge-xl badge-primary">Topik : {{ $tweet->topic }}</span>    
                         </div>
                         <div>
+                            <label class="custom-control custom-control-danger custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" value="1" name="laporan_{{$tweet->id_tweet}}">
+                                <span class="custom-control-indicator"></span>
+                                <span class="custom-control-description">laporkan</span>
+                            </label>
                             <label class="custom-control custom-control-success custom-checkbox">
                                 <input type="checkbox" class="custom-control-input" value="1" name="sarkastik_{{$tweet->id_tweet}}">
                                 <span class="custom-control-indicator"></span>
