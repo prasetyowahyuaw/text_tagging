@@ -2,4 +2,4 @@
 Text Tagging Application
 ###################
 
-aplikasi untuk melakukan tagging text 
+aplikasi untuk melakukan tagging text menggunakan framework CodeIgniter
